@@ -1,0 +1,318 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>main</title><meta name="generator" content="MATLAB 8.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2014-06-05"><meta name="DC.source" content="main.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">&#28165;&#31354;&#29615;&#22659;</a></li><li><a href="#2">&#19979;&#36733;&#25968;&#25454;</a></li><li><a href="#3">&#22522;&#26412;&#21442;&#25968;</a></li><li><a href="#4">&#21021;&#22987;&#21270;</a></li><li><a href="#5">&#24490;&#29615;&#23547;&#25214;</a></li><li><a href="#6">&#25551;&#32472;&#35299;&#30340;&#21464;&#21270;</a></li><li><a href="#7">&#26174;&#31034;&#26368;&#20248;&#35299;</a></li></ul></div><h2>&#28165;&#31354;&#29615;&#22659;<a name="1"></a></h2><pre class="codeinput">clc;clear;clf
+tic
+</pre><h2>&#19979;&#36733;&#25968;&#25454;<a name="2"></a></h2><pre class="codeinput">load <span class="string">scheduleData</span> <span class="string">Jm</span> <span class="string">T</span> <span class="string">JmNumber</span>
+<span class="comment">%&#24037;&#24207; &#26102;&#38388;</span>
+</pre><h2>&#22522;&#26412;&#21442;&#25968;<a name="3"></a></h2><pre class="codeinput">NIND=40;        <span class="comment">%&#20010;&#20307;&#25968;&#30446;</span>
+MAXGEN=50;      <span class="comment">%&#26368;&#22823;&#36951;&#20256;&#20195;&#25968;</span>
+GGAP=0.9;       <span class="comment">%&#20195;&#27807;</span>
+XOVR=0.8;       <span class="comment">%&#20132;&#21449;&#29575;</span>
+MUTR=0.6;       <span class="comment">%&#21464;&#24322;&#29575;</span>
+gen=0;          <span class="comment">%&#20195;&#35745;&#25968;&#22120;</span>
+<span class="comment">%PNumber &#24037;&#20214;&#20010;&#25968; MNumber  &#24037;&#24207;&#20010;&#25968;</span>
+[PNumber, MNumber]=size(Jm);
+trace=zeros(2, MAXGEN);      <span class="comment">%&#23547;&#20248;&#32467;&#26524;&#30340;&#21021;&#22987;&#20540;</span>
+WNumber=PNumber*MNumber;     <span class="comment">%&#24037;&#24207;&#24635;&#20010;&#25968;</span>
+</pre><h2>&#21021;&#22987;&#21270;<a name="4"></a></h2><pre class="codeinput">Number=zeros(1,PNumber);     <span class="comment">% PNumber &#24037;&#20214;&#20010;&#25968;</span>
+<span class="keyword">for</span> i=1:PNumber
+    Number(i)=MNumber;         <span class="comment">%MNumber&#24037;&#24207;&#20010;&#25968;</span>
+<span class="keyword">end</span>
+
+<span class="comment">% &#20195;&#30721;2&#23618;&#65292;&#31532;&#19968;&#23618;&#24037;&#24207;&#65292;&#31532;&#20108;&#23618;&#26426;&#22120;</span>
+Chrom=zeros(NIND,2*WNumber);
+<span class="keyword">for</span> j=1:NIND
+    WPNumberTemp=Number;
+    <span class="keyword">for</span> i=1:WNumber
+
+        <span class="comment">%&#38543;&#26426;&#20135;&#25104;&#24037;&#24207;</span>
+        val=unidrnd(PNumber);
+        <span class="keyword">while</span> WPNumberTemp(val)==0
+            val=unidrnd(PNumber);
+        <span class="keyword">end</span>
+
+        <span class="comment">%&#31532;&#19968;&#23618;&#20195;&#30721;&#34920;&#31034;&#24037;&#24207;</span>
+        Chrom(j,i)= val;
+        WPNumberTemp(val)=WPNumberTemp(val)-1;
+
+        <span class="comment">%&#31532;2&#23618;&#20195;&#30721;&#34920;&#31034;&#26426;&#22120;</span>
+        Temp=Jm{val,MNumber-WPNumberTemp(val)};
+        SizeTemp=length(Temp);
+        <span class="comment">%&#38543;&#26426;&#20135;&#25104;&#24037;&#24207;&#26426;&#22120;</span>
+        Chrom(j,i+WNumber)= unidrnd(SizeTemp);
+
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+<span class="comment">%&#35745;&#31639;&#30446;&#26631;&#20989;&#25968;&#20540;</span>
+[PVal, ObjV, P, S]=cal(Chrom,JmNumber,T,Jm);
+</pre><h2>&#24490;&#29615;&#23547;&#25214;<a name="5"></a></h2><pre class="codeinput"><span class="keyword">while</span> gen&lt;MAXGEN
+
+    <span class="comment">%&#20998;&#37197;&#36866;&#24212;&#24230;&#20540;</span>
+    FitnV=ranking(ObjV);
+    <span class="comment">%&#36873;&#25321;&#25805;&#20316;</span>
+    SelCh=select(<span class="string">'rws'</span>, Chrom, FitnV, GGAP);
+    <span class="comment">%&#20132;&#21449;&#25805;&#20316;</span>
+    SelCh=across(SelCh,XOVR,Jm,T);
+    <span class="comment">%&#21464;&#24322;&#25805;&#20316;</span>
+    SelCh=aberranceJm(SelCh,MUTR,Jm,T);
+
+    <span class="comment">%&#35745;&#31639;&#30446;&#26631;&#36866;&#24212;&#24230;&#20540;</span>
+    [PVal, ObjVSel P S]=cal(SelCh,JmNumber,T,Jm);
+    <span class="comment">%&#37325;&#26032;&#25554;&#20837;&#26032;&#31181;&#32676;</span>
+    [Chrom ObjV] =reins(Chrom, SelCh,1, 1, ObjV, ObjVSel);
+    <span class="comment">%&#20195;&#35745;&#25968;&#22120;&#22686;&#21152;</span>
+    gen=gen+1;
+
+    <span class="comment">%&#20445;&#23384;&#26368;&#20248;&#20540;</span>
+    trace(1, gen)=min(ObjV);
+    trace(2, gen)=mean(ObjV);
+
+    <span class="comment">% &#35760;&#24405;&#26368;&#20339;&#20540;</span>
+    <span class="keyword">if</span> gen==1
+        Val1=PVal;
+        Val2=P;
+        MinVal=min(ObjV);<span class="comment">%&#26368;&#23567;&#26102;&#38388;</span>
+        STemp=S;
+    <span class="keyword">end</span>
+    <span class="comment">%&#35760;&#24405; &#26368;&#23567;&#30340;&#24037;&#24207;</span>
+    <span class="keyword">if</span> MinVal&gt; trace(1,gen)
+        Val1=PVal;
+        Val2=P;
+        MinVal=trace(1,gen);
+        STemp=S;
+    <span class="keyword">end</span>
+
+<span class="keyword">end</span>
+
+<span class="comment">% &#24403;&#21069;&#26368;&#20339;&#20540;</span>
+PVal=Val1; <span class="comment">%&#24037;&#24207;&#26102;&#38388;</span>
+P=Val2 ; <span class="comment">%&#24037;&#24207;</span>
+S=STemp; <span class="comment">%&#35843;&#24230;&#22522;&#22240;&#21547;&#26426;&#22120;&#22522;&#22240;</span>
+</pre><h2>&#25551;&#32472;&#35299;&#30340;&#21464;&#21270;<a name="6"></a></h2><pre class="codeinput">figure(1)
+plot(trace(1,:));
+hold <span class="string">on</span>;
+plot(trace(2,:),<span class="string">'-.'</span>);grid;
+legend(<span class="string">'&#35299;&#30340;&#21464;&#21270;'</span>,<span class="string">'&#31181;&#32676;&#22343;&#20540;&#30340;&#21464;&#21270;'</span>);
+</pre><img vspace="5" hspace="5" src="main_01.png" alt=""> <h2>&#26174;&#31034;&#26368;&#20248;&#35299;<a name="7"></a></h2><pre class="codeinput">figure(2);
+MP=S(1,PNumber*MNumber+1:PNumber*MNumber*2);
+<span class="keyword">for</span> i=1:WNumber
+    val= P(1,i);
+    a=(mod(val,100)); <span class="comment">%&#24037;&#24207;</span>
+    b=((val-a)/100); <span class="comment">%&#24037;&#20214;</span>
+    Temp=Jm{b,a};
+    mText=Temp(MP(1,i));
+
+    x1=PVal(1,i);
+    x2=PVal(2,i);
+
+    y1=mText-1;
+    y2=mText;
+    plotRec(x1,x2,mText);
+
+   plotRec(PVal(1,i),PVal(2,i),mText);
+    hold <span class="string">on</span>;
+
+    fill([x1,x2,x2,x1],[y1,y1,y2,y2],[1-1/b,1/b,b/PNumber]);
+    text((x1+x2)/2,mText-0.25,num2str(P(i)));
+<span class="keyword">end</span>
+toc
+</pre><pre class="codeoutput">Elapsed time is 2.849064 seconds.
+</pre><img vspace="5" hspace="5" src="main_02.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2012b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% 清空环境
+clc;clear;clf
+tic
+%% 下载数据
+load scheduleData Jm T JmNumber
+%工序 时间
+
+%% 基本参数
+NIND=40;        %个体数目
+MAXGEN=50;      %最大遗传代数
+GGAP=0.9;       %代沟
+XOVR=0.8;       %交叉率
+MUTR=0.6;       %变异率
+gen=0;          %代计数器
+%PNumber 工件个数 MNumber  工序个数
+[PNumber, MNumber]=size(Jm);  
+trace=zeros(2, MAXGEN);      %寻优结果的初始值
+WNumber=PNumber*MNumber;     %工序总个数
+
+%% 初始化
+Number=zeros(1,PNumber);     % PNumber 工件个数
+for i=1:PNumber
+    Number(i)=MNumber;         %MNumber工序个数
+end
+
+% 代码2层，第一层工序，第二层机器
+Chrom=zeros(NIND,2*WNumber);
+for j=1:NIND
+    WPNumberTemp=Number;
+    for i=1:WNumber
+        
+        %随机产成工序
+        val=unidrnd(PNumber);
+        while WPNumberTemp(val)==0
+            val=unidrnd(PNumber);
+        end
+        
+        %第一层代码表示工序
+        Chrom(j,i)= val;
+        WPNumberTemp(val)=WPNumberTemp(val)-1;
+        
+        %第2层代码表示机器
+        Temp=Jm{val,MNumber-WPNumberTemp(val)};
+        SizeTemp=length(Temp);
+        %随机产成工序机器
+        Chrom(j,i+WNumber)= unidrnd(SizeTemp);
+        
+    end
+end
+ 
+%计算目标函数值
+[PVal, ObjV, P, S]=cal(Chrom,JmNumber,T,Jm);  
+
+%% 循环寻找
+while gen<MAXGEN
+    
+    %分配适应度值
+    FitnV=ranking(ObjV);  
+    %选择操作
+    SelCh=select('rws', Chrom, FitnV, GGAP);       
+    %交叉操作
+    SelCh=across(SelCh,XOVR,Jm,T);          
+    %变异操作
+    SelCh=aberranceJm(SelCh,MUTR,Jm,T);            
+    
+    %计算目标适应度值
+    [PVal, ObjVSel P S]=cal(SelCh,JmNumber,T,Jm);   
+    %重新插入新种群
+    [Chrom ObjV] =reins(Chrom, SelCh,1, 1, ObjV, ObjVSel);       
+    %代计数器增加
+    gen=gen+1;       
+    
+    %保存最优值
+    trace(1, gen)=min(ObjV);       
+    trace(2, gen)=mean(ObjV);  
+    
+    % 记录最佳值
+    if gen==1
+        Val1=PVal;
+        Val2=P;
+        MinVal=min(ObjV);%最小时间
+        STemp=S;
+    end
+    %记录 最小的工序
+    if MinVal> trace(1,gen)
+        Val1=PVal;
+        Val2=P;
+        MinVal=trace(1,gen);
+        STemp=S;
+    end
+    
+end
+
+% 当前最佳值
+PVal=Val1; %工序时间
+P=Val2 ; %工序 
+S=STemp; %调度基因含机器基因
+
+%% 描绘解的变化
+figure(1)
+plot(trace(1,:));
+hold on;
+plot(trace(2,:),'-.');grid;
+legend('解的变化','种群均值的变化');
+
+%% 显示最优解
+figure(2);
+MP=S(1,PNumber*MNumber+1:PNumber*MNumber*2);
+for i=1:WNumber  
+    val= P(1,i);
+    a=(mod(val,100)); %工序
+    b=((val-a)/100); %工件
+    Temp=Jm{b,a};
+    mText=Temp(MP(1,i));
+    
+    x1=PVal(1,i);
+    x2=PVal(2,i);
+    
+    y1=mText-1;
+    y2=mText;
+    plotRec(x1,x2,mText);
+    
+   plotRec(PVal(1,i),PVal(2,i),mText);
+    hold on;
+    
+    fill([x1,x2,x2,x1],[y1,y1,y2,y2],[1-1/b,1/b,b/PNumber]);
+    text((x1+x2)/2,mText-0.25,num2str(P(i)));
+end
+toc
+##### SOURCE END #####
+--></body></html>
