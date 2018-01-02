@@ -69,7 +69,7 @@ figure
 plot([1:r]',trace(:,1),'r-',[1:r]',trace(:,2),'b--');
 title(['函数值曲线  ' '终止代数＝' num2str(maxgen)],'fontsize',12);
 xlabel('进化代数','fontsize',12);ylabel('函数值','fontsize',12);
-legend('各代平均值','各代最佳值','fontsize',12);
+legend('各代平均值','各代最佳值');
 ylim([-0.5 5])
 disp('函数值                   变量');
 % 窗口显示
