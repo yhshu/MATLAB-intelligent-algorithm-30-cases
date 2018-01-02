@@ -13,5 +13,5 @@ function Obj=Objfun(X,P,T,hiddennum,P_test,T_test)
 [M,N]=size(X);
 Obj=zeros(M,1);
 for i=1:M
-    Obj(i)=Bpfun(X(i,:),P,T,hiddennum,P_test,T_test);
+    Obj(i)=BPfun(X(i,:),P,T,hiddennum,P_test,T_test);
 end
