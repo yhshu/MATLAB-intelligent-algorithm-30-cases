@@ -1,4 +1,4 @@
-function err=Bpfun(x,P,T,hiddennum,P_test,T_test)
+function err=BPfun(x,P,T,hiddennum,P_test,T_test)
 %% ÑµÁ·&²âÊÔBPÍøÂç
 %% ÊäÈë
 % x£ºÒ»¸ö¸öÌåµÄ³õÊ¼È¨ÖµºÍãĞÖµ
@@ -31,7 +31,7 @@ net.iw{1,1}=reshape(w1,hiddennum,inputnum);
 net.lw{2,1}=reshape(w2,outputnum,hiddennum);
 net.b{1}=reshape(B1,hiddennum,1);
 net.b{2}=reshape(B2,outputnum,1);
-%% ÑµÁ·ÍøÂçÒÔ
+%% ÑµÁ·ÍøÂç
 net=train(net,P,T);
 %% ²âÊÔÍøÂç
 Y=sim(net,P_test);

@@ -1,5 +1,5 @@
 clc
-%% 不适用遗传算法
+%% 不使用遗传算法
 %% 使用随机权值和阈值 
 inputnum=size(P,1);       % 输入层神经元个数
 outputnum=size(T,1);      % 输出层神经元个数
@@ -9,7 +9,7 @@ net=newff(minmax(P),[hiddennum,outputnum],{'tansig','logsig'},'trainlm');
 net.trainParam.epochs=1000;
 net.trainParam.goal=0.01;
 LP.lr=0.1;
-%% 训练网络以
+%% 训练网络
 net=train(net,P,T);
 %% 测试网络
 disp(['1、使用随机权值和阈值 '])
@@ -42,7 +42,7 @@ net.iw{1,1}=reshape(w1,hiddennum,inputnum);
 net.lw{2,1}=reshape(w2,outputnum,hiddennum);
 net.b{1}=reshape(B1,hiddennum,1);
 net.b{2}=reshape(B2,outputnum,1);
-%% 训练网络以
+%% 训练网络
 net=train(net,P,T);
 %% 测试网络
 disp(['2、使用优化后的权值和阈值'])
