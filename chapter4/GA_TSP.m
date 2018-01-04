@@ -14,8 +14,7 @@ clear
 clc
 close all
 %% 加载数据
-load data
-X=data;
+load CityPosition2
 D=Distanse(X);  %生成距离矩阵
 N=size(D,1);    %城市个数
 %% 遗传参数
