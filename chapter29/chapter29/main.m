@@ -74,7 +74,7 @@ result_2 = [t_test predict_2];
 
 %% 绘图
 figure(1)
-plot(1:length(t_train),t_train,'r-*',1:length(t_train),predict_1,'b:o')
+plot(1:length(t_train),t_train,'r-*',1:length(t_train),result_1,'b:o')
 grid on
 legend('真实值','预测值')
 xlabel('样本编号')
